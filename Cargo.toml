@@ -1,0 +1,29 @@
+[package]
+name = "pafta"
+version = "0.1.0"
+edition = "2024"
+description = "egui arayüzlerini elle tasarlama aracı"
+publish = false
+
+[dependencies]
+eframe = { version = "0.37", features = ["persistence"] }
+rfd = "0.17"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+# Tuval etkileşimlerini sanal fareyle sınar ve kareleri resim olarak çizer.
+egui_kittest = { version = "0.37", features = ["eframe", "wgpu", "snapshot"] }
+
+[build-dependencies]
+# Windows'ta exe'ye simge ve dosya bilgisi gömer (build.rs).
+winresource = "0.1"
+
+# Geliştirirken de akıcı çalışsın diye bağımlılıklar iyileştirilmiş derlenir.
+[profile.dev.package."*"]
+opt-level = 2
+
+# Dağıtılan exe: hata ayıklama simgeleri atılır, bağımlılıklar arası iyileştirme açık.
+[profile.release]
+strip = true
+lto = "thin"

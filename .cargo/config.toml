@@ -1,0 +1,4 @@
+# Visual C++ çalışma zamanı exe'nin içine gömülür; exe başka bir bilgisayarda
+# ek kurulum (VC++ Redistributable) olmadan açılır.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
