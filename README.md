@@ -3,6 +3,9 @@
 egui arayüzlerini elle tasarlama aracı. Bileşenleri bir pencereye sürükleyip yerleştirirsin;
 Pafta tasarımı `cargo run` ile çalışan tek dosyalık bir eframe uygulamasına çevirir.
 
+**İndir:** [Pafta.exe](https://github.com/DennisYildizdev/pafta/raw/main/dist/Pafta.exe)
+(Windows 10/11, kurulum gerekmez)
+
 ```
 cargo run --release
 ```
